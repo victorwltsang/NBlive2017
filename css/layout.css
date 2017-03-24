@@ -1,0 +1,366 @@
+/*
+Item Name : Circular Countdown jQuery Plugin
+Item URI : http://codecanyon.net/item/circular-countdown-jquery-plugin/3761921
+Author URI : http://codecanyon.net/user/Pixelworkshop/
+Version : 1.21
+*/
+
+
+
+/*
+
+Page styling (optionnal)
+
+*/
+
+
+/*  _______________________________________
+
+	COUNTDOWN
+    _______________________________________  */
+	
+
+
+/* 
+   IMPORTANT
+   The exact same width must be set to the #countdown_container and to the canvas
+   element #circular_countdown in the HTML markup !
+*/
+
+#countdown_container {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	/*
+	Additional styling
+	*/
+	padding: 10px;
+	margin: 10px auto;
+	
+}
+#countdown_container h1 {
+	font-family: 'Open Sans',sans-serif;
+	font-size:28px;
+	font-weight: normal;
+	font-style:italic;
+	text-align:center;
+	color:#212121;
+	line-height:36px;
+	margin:0 auto 42px auto;
+	text-align:center;
+}
+
+#countdown_timer,
+#countdown_timer ul,
+#circular_countdown {
+	position: relative;
+	width:100%;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+#countdown_clock {
+	width:100%;
+	position:relative;
+	z-index:1;
+	margin: 0;
+	padding:0;
+}
+#circular_countdown_days,
+#circular_countdown_hours,
+#circular_countdown_minutes,
+#circular_countdown_seconds {
+	position:relative;
+	z-index:1;
+	padding:0;
+	width: 160px;
+}
+#circular_countdown_days {
+	margin: 0 10px 0 10px;
+}
+#circular_countdown_hours {
+	margin: 0 10px 0 0;
+}
+#circular_countdown_minutes {
+	margin: 0 10px 0 0;
+}
+#circular_countdown_seconds {
+	margin: 0;
+}
+#countdown_timer {
+	z-index:2;
+	width: 800px;
+}
+	#countdown_timer li {
+		list-style: none;
+		padding: 5px 20px 8px 20px;
+		margin-top: 35px;
+		float: left;
+		width: 160px;
+		color:#333333;
+		font-size: 9px;
+		position: absolute;
+		text-align: center;
+		text-transform:uppercase;
+	}
+		#countdown_timer li.days {
+			left:44px;
+			color: #006fb8;
+		}
+		#countdown_timer li.hours {
+			left:215px;
+			color: #8eb84a;
+		}
+		#countdown_timer li.minutes {
+			left:390px;
+			color: #d2007d;
+		}
+		#countdown_timer li.seconds {
+			left:565px;
+			color: #8354a2;
+		}
+		#countdown_timer li em {
+			display: block;
+			font-size:32px;
+			line-height:30px;
+			font-weight:bold;
+			font-style: normal;
+			padding:0;
+		}
+
+/*
+Markup to keep a decent layout under IE8 and below
+*/
+
+/* IE8 */
+
+@media \0screen {
+	#countdown_timer {
+		height: 130px;
+	}
+	#countdown_container h1 {
+		margin:0 auto;
+	}
+}
+
+/* IE7 and below */
+
+#countdown_timer {
+	*height: 130px;
+}
+#countdown_container h1 {
+	*margin:0 auto;
+}
+
+
+
+
+@media screen and (min-width: 985px) {
+	#countdown_container {
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 984px) and (max-width: 991px) {
+	
+	#circular_countdown_days,
+#circular_countdown_hours,
+#circular_countdown_minutes,
+#circular_countdown_seconds {
+	position:relative;
+	z-index:1;
+	padding:0;
+	width: 160px;
+}
+#circular_countdown_days {
+	margin: 0 10px 0 10px;
+}
+#circular_countdown_hours {
+	margin: 0 10px 0 0;
+}
+#circular_countdown_minutes {
+	margin: 0 10px 0 0;
+}
+#circular_countdown_seconds {
+	margin: 0;
+}
+#countdown_timer {
+	z-index:2;
+	width: 800px;
+}
+	#countdown_timer li {
+		list-style: none;
+		padding: 5px 20px 8px 20px;
+		margin-top: 35px;
+		float: left;
+		width: 160px;
+		color:#333333;
+		font-size: 9px;
+		position: absolute;
+		text-align: center;
+		text-transform:uppercase;
+	}
+		#countdown_timer li.days {
+			left:-4px;
+			color: #006fb8;
+		}
+		#countdown_timer li.hours {
+			left:165px;
+			color: #8eb84a;
+		}
+		#countdown_timer li.minutes {
+			left:340px;
+			color: #d2007d;
+		}
+		#countdown_timer li.seconds {
+			left:515px;
+			color: #8354a2;
+		}
+		#countdown_timer li em {
+			display: block;
+			font-size:32px;
+			line-height:30px;
+			font-weight:bold;
+			font-style: normal;
+			padding:0;
+		}
+}
+@media only screen and (min-width: 768px) and (max-width: 984px) {
+
+	#countdown_container {
+		width: 600px;
+	}
+	#countdown_timer {
+		z-index:2;
+		width: 600px;
+	}
+	#countdown_container h1 {
+		font-size:24px;
+	}
+	#countdown_timer li.days,
+	#countdown_timer li.minutes {
+		margin-left: 80px;
+	}
+	#countdown_timer li.hours,
+	#countdown_timer li.seconds {
+		margin-left: 95px;
+	}
+		#countdown_timer li.days {
+			left:42px;
+			top: 0;
+		}
+		#countdown_timer li.hours {
+			left:260px;
+			top: 0;
+		}
+		#countdown_timer li.minutes {
+			left: 42px;
+			top:180px;
+		}
+		#countdown_timer li.seconds {
+			left:260px;
+			top:180px;
+		}
+	#circular_countdown_days,
+	#circular_countdown_hours,
+	#circular_countdown_minutes,
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 17px 100px;
+	}
+	#circular_countdown_hours,
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 17px 70px;
+	}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	#countdown_container {
+		width: 500px;
+	}
+	#countdown_timer {
+		z-index:2;
+		width: 500px;
+	}
+	#countdown_container h1 {
+		font-size:23px;
+	}
+	#countdown_timer li.days,
+	#countdown_timer li.hours,
+	#countdown_timer li.minutes,
+	#countdown_timer li.seconds {
+		left:auto;
+		margin-left: 50px;
+	}
+		#countdown_timer li.days {
+			top:0;
+			left: 5px;
+		}
+		#countdown_timer li.hours {
+			top:0;
+			left: 190px;
+		}
+		#countdown_timer li.minutes {
+			top:205px;
+			left: 5px;
+		}
+		#countdown_timer li.seconds {
+			top:205px;
+			left: 190px;
+		}
+	#circular_countdown_days,
+	#circular_countdown_hours,
+	#circular_countdown_minutes,
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 40px 20px;
+	}
+
+}
+
+
+
+@media only screen and (max-width: 479px) {
+
+	#countdown_container {
+		width: 240px;
+		padding: 20px;
+	}
+	#countdown_timer {
+		width: 260px;
+	}
+	#countdown_container h1 {
+		font-size:18px;
+	}
+	#countdown_timer li.days,
+	#countdown_timer li.hours,
+	#countdown_timer li.minutes,
+	#countdown_timer li.seconds {
+		left:auto;
+		margin-left: 20px;
+	}
+		#countdown_timer li.days {
+			top:0;
+		}
+		#countdown_timer li.hours {
+			top:180px;
+		}
+		#countdown_timer li.minutes {
+			top:370px;
+		}
+		#countdown_timer li.seconds {
+			top:560px;
+		}
+	#circular_countdown_days,
+	#circular_countdown_hours,
+	#circular_countdown_minutes,
+	#circular_countdown_seconds {
+		clear: left;
+		margin: 0 0 20px 40px;
+	}
+
+}
+
+
